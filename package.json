@@ -1,12 +1,12 @@
 {
-  "name": "@next/events",
+  "name": "next-events",
   "version": "0.0.0",
   "description": "Modern DOM events helpers written in es2015",
   "main": "index.js",
   "jsnext:main": "index.js",
   "scripts": {
     "prepublish": "npm test",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo 'there will be soon'"
   },
   "files": [
     "index.js"
