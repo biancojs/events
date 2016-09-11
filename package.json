@@ -1,0 +1,31 @@
+{
+  "name": "@next/events",
+  "version": "0.0.0",
+  "description": "Modern DOM events helpers written in es2015",
+  "main": "index.js",
+  "jsnext:main": "index.js",
+  "scripts": {
+    "prepublish": "npm test",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "index.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GianlucaGuarini/next-events.git"
+  },
+  "keywords": [
+    "es6",
+    "es2015",
+    "addEventListener",
+    "removeEventListener",
+    "DOM"
+  ],
+  "author": "Gianluca Guarini <gianluca.guarini@gmail.com> (http://gianlucaguarini.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GianlucaGuarini/next-events/issues"
+  },
+  "homepage": "https://github.com/GianlucaGuarini/next-events#readme"
+}
