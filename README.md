@@ -1,4 +1,4 @@
-# next-events
+# bianco-events
 Modern DOM events helpers written in es2015
 
 This script will not be transpiled and it is only thought to be part of your build chain.
@@ -6,7 +6,7 @@ This script will not be transpiled and it is only thought to be part of your bui
 ## Usage
 
 ```js
-import { add, remove, once } from 'next-events'
+import { add, remove, once } from 'bianco-events'
 
 add(dom, 'click mouseenter', function(e) {
   console.log('tadaaa!')
