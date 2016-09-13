@@ -3,13 +3,16 @@
   "version": "0.0.0",
   "description": "Modern DOM events helpers written in es2015",
   "main": "index.js",
-  "jsnext:main": "index.js",
+  "jsnext:main": "index.next.js",
   "scripts": {
-    "prepublish": "npm test",
-    "test": "echo 'there will be soon'"
+    "prepublish": "npm run build && npm test",
+    "lint": "eslint index.next.js test.js",
+    "build": "rollup -f cjs -- index.next.js > index.js",
+    "test": "npm run lint && node test"
   },
   "files": [
-    "index.js"
+    "index.js",
+    "index.next.js"
   ],
   "repository": {
     "type": "git",
@@ -27,5 +30,9 @@
   "bugs": {
     "url": "https://github.com/GianlucaGuarini/bianco-events/issues"
   },
-  "homepage": "https://github.com/GianlucaGuarini/bianco-events#readme"
+  "homepage": "https://github.com/GianlucaGuarini/bianco-events#readme",
+  "devDependencies": {
+    "jsdom": "9.5.0",
+    "jsdom-global": "2.1.0"
+  }
 }

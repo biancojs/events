@@ -1,7 +1,3 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 /**
  * Split a string into several items separed by spaces
  * @param   { String } list - events list
@@ -29,7 +25,7 @@ function manageEvents(el, evList, cb, method) {
  * @param   { Function }    cb     - listeners callback
  * @returns { HTMLElement } DOM node and first argument of the function
  */
-function add(el, evList, cb) {
+export function add(el, evList, cb) {
   manageEvents(el, evList, cb, 'addEventListener')
   return el
 }
@@ -41,7 +37,7 @@ function add(el, evList, cb) {
  * @param   { Function }    cb     - listeners callback
  * @returns { HTMLElement } DOM node and first argument of the function
  */
-function once(el, evList, cb) {
+export function once(el, evList, cb) {
   var handleEvent = function() {
     cb.apply(el, [el, evList, handleEvent])
     remove(el, evList, handleEvent)
@@ -58,18 +54,14 @@ function once(el, evList, cb) {
  * @param   { Function }    cb     - listeners callback
  * @returns { HTMLElement } DOM node and first argument of the function
  */
-function remove(el, evList, cb) {
+export function remove(el, evList, cb) {
   manageEvents(el, evList, cb, 'removeEventListener')
   return el
 }
 
-var index_next = {
+export default {
   add,
   once,
   remove
 }
 
-exports.add = add;
-exports.once = once;
-exports.remove = remove;
-exports['default'] = index_next;
