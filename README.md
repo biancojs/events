@@ -26,8 +26,8 @@ add(node/s, 'click mouseenter', function(e) {
 - `once(node/s, events, callback)` add a listener for one or more events space separated that will be triggered only once
 
 
-[travis-image]:https://img.shields.io/travis/biancojs/bianco-events.svg?style=flat-square
-[travis-url]:https://travis-ci.org/biancojs/bianco-events
+[travis-image]:https://img.shields.io/travis/biancojs/events.svg?style=flat-square
+[travis-url]:https://travis-ci.org/biancojs/events
 
 [license-image]:http://img.shields.io/badge/license-MIT-000000.svg?style=flat-square
 [license-url]:LICENSE.txt
