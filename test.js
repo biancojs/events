@@ -1,7 +1,9 @@
 require('jsdom-global')()
+
 const assert = require('assert')
 const { add, remove, once } = require('./')
 const $ = document.querySelectorAll.bind(document)
+const body = document.body
 
 function fire(el, name) {
   var e = document.createEvent('HTMLEvents')
@@ -9,67 +11,62 @@ function fire(el, name) {
   el.dispatchEvent(e)
 }
 
-function before() {
-  var div = document.createElement('div')
-  div.innerHTML = `
-  <ul>
-    <li class='item'>click me</li>
-    <li>click me</li>
-  </ul>
-  `
-  document.body.appendChild(div)
-}
+describe('Bianco events', function() {
 
-function beforeEach() {
-  count = 0
-}
+  let count, item, lis, inc
 
-before()
+  beforeEach(function () {
+    var div = document.createElement('div')
+    div.innerHTML = `
+    <ul>
+      <li class='item'>click me</li>
+      <li>click me</li>
+    </ul>
+    `
+    body.innerHTML = ''
+    body.appendChild(div)
+    count = 0
+    item = $('.item')[0]
+    lis = $('li')
+    inc = _ => count++
+  })
 
-let count = 0,
-  item = $('.item')[0],
-  lis = $('li'),
-  inc = _ => count++
+  it('It can handle the "add" function properly', function() {
+    add(item, 'click mouseenter', inc)
+    add(lis, 'mouseleave', inc)
 
-// it works
+    fire(item, 'click')
+    fire(item, 'mouseenter')
+    fire(item, 'mouseleave')
 
-add(item, 'click mouseenter', inc)
-add(lis, 'mouseleave', inc)
+    assert.equal(count, 3)
+  })
 
-fire(item, 'click')
-fire(item, 'mouseenter')
-fire(item, 'mouseleave')
+  it('It can remove properly the events', function() {
+    add(item, 'click mouseenter', inc)
+    add(lis, 'mouseleave', inc)
 
-assert.equal(count, 3)
-beforeEach()
+    remove(item, 'click', inc)
 
-// it can remove properly the events
+    fire(item, 'click')
+    fire(item, 'mouseenter')
+    fire(item, 'mouseleave')
 
-remove(item, 'click', inc)
+    assert.equal(count, 2)
+  })
 
-fire(item, 'click')
-fire(item, 'mouseenter')
-fire(item, 'mouseleave')
+  it('It can handle properly the "once" method', function() {
+    add(lis, 'mouseleave', inc)
+    once(item, 'click', function(e) {
+      assert.equal(typeof e, 'object')
+      assert.equal(e.type, 'click')
+      inc()
+    })
 
-assert.equal(count, 2)
-beforeEach()
+    fire(item, 'click')
+    fire(item, 'click')
+    fire(lis[1], 'mouseleave')
 
-// it handles properly the once method
-
-once(item, 'click', function(e) {
-  assert.equal(typeof e, 'object')
-  assert.equal(e.type, 'click')
-  inc()
+    assert.equal(count, 2)
+  })
 })
-
-fire(item, 'click')
-fire(item, 'click')
-fire(lis[1], 'mouseleave')
-
-assert.equal(count, 2)
-beforeEach()
-
-
-
-
-

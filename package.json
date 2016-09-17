@@ -8,7 +8,7 @@
     "prepublish": "npm run build && npm test",
     "lint": "eslint index.next.js test.js",
     "build": "rollup -f cjs -- index.next.js > index.js",
-    "test": "npm run lint && node test"
+    "test": "npm run lint && mocha test.js"
   },
   "files": [
     "index.js",
