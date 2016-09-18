@@ -1,16 +1,11 @@
+import domToArray from 'bianco.dom-to-array'
+
 /**
  * Split a string into several items separed by spaces
  * @param   { String } l - events list
  * @returns { Array } all the events detected
  */
 const split = l => l.split(/\s/)
-
-/**
- * Define whether an object is iterable
- * @param   { Object }  o - test object
- * @returns { Boolean } either true or false
- */
-const isIterable = o => typeof o[Symbol.iterator] === 'function'
 
 /**
  * Set a listener for all the events received separated by spaces
@@ -20,7 +15,7 @@ const isIterable = o => typeof o[Symbol.iterator] === 'function'
  * @param   { String }            method  - either 'addEventListener' or 'removeEventListener'
  */
 function manageEvents(els, evList, cb, method) {
-  if (!isIterable(els)) els = els.length ? Array.from(els) : [els]
+  els = domToArray(els)
 
   split(evList).forEach((e) => {
     for (let el of els) el[method](e, cb, false)

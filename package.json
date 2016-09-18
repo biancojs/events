@@ -1,13 +1,13 @@
 {
-  "name": "bianco-events",
-  "version": "0.0.2",
+  "name": "bianco.events",
+  "version": "0.0.0",
   "description": "Modern DOM events helpers written in es2015",
   "main": "index.js",
   "jsnext:main": "index.next.js",
   "scripts": {
     "prepublish": "npm run build && npm test",
-    "lint": "eslint index.next.js test.js",
-    "build": "rollup -f cjs -- index.next.js > index.js",
+    "lint": "eslint index.next.js test.js rollup.config.js",
+    "build": "rollup -c",
     "test": "npm run lint && mocha test.js"
   },
   "files": [
@@ -34,5 +34,8 @@
   "devDependencies": {
     "jsdom": "9.5.0",
     "jsdom-global": "2.1.0"
+  },
+  "dependencies": {
+    "bianco.dom-to-array": "^0.0.2"
   }
 }

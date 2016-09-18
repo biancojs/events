@@ -1,4 +1,4 @@
-# bianco-events
+# bianco.events
 
 [![Build Status][travis-image]][travis-url]
 [![NPM version][npm-version-image]][npm-url]
@@ -12,7 +12,7 @@ This script will not be transpiled and it is only thought to be part of your bui
 ## Usage
 
 ```js
-import { add, remove, once } from 'bianco-events'
+import { add, remove, once } from 'bianco.events'
 
 add(node/s, 'click mouseenter', function(e) {
   console.log('tadaaa!')
@@ -32,6 +32,6 @@ add(node/s, 'click mouseenter', function(e) {
 [license-image]:http://img.shields.io/badge/license-MIT-000000.svg?style=flat-square
 [license-url]:LICENSE.txt
 
-[npm-version-image]:http://img.shields.io/npm/v/bianco-events.svg?style=flat-square
-[npm-downloads-image]:http://img.shields.io/npm/dm/bianco-events.svg?style=flat-square
-[npm-url]:https://npmjs.org/package/bianco-events
+[npm-version-image]:http://img.shields.io/npm/v/bianco.events.svg?style=flat-square
+[npm-downloads-image]:http://img.shields.io/npm/dm/bianco.events.svg?style=flat-square
+[npm-url]:https://npmjs.org/package/bianco.events
