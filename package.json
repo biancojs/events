@@ -36,6 +36,6 @@
     "jsdom-global": "2.1.0"
   },
   "dependencies": {
-    "bianco.dom-to-array": "^0.0.2"
+    "bianco.dom-to-array": "^0.0.4"
   }
 }
