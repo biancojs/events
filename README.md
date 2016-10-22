@@ -21,9 +21,9 @@ add(node/s, 'click mouseenter', function(e) {
 
 ## API
 
-- `add(node/s, events, callback)` add a listener for one or more events space separated
-- `remove(node/s, events, callback)` remove a listener for one or more events space separated
-- `once(node/s, events, callback)` add a listener for one or more events space separated that will be triggered only once
+- `add(node/s, events, callback, options)` add a listener for one or more events space separated
+- `remove(node/s, events, callback, options)` remove a listener for one or more events space separated
+- `once(node/s, events, callback, options)` add a listener for one or more events space separated that will be triggered only once
 
 
 [travis-image]:https://img.shields.io/travis/biancojs/events.svg?style=flat-square

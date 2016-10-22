@@ -13,12 +13,13 @@ const split = l => l.split(/\s/)
  * @param   { String }                     evList  - list of events we want to bind or unbind space separated
  * @param   { Function }                   cb      - listeners callback
  * @param   { String }                     method  - either 'addEventListener' or 'removeEventListener'
+ * @param   { Object }                     options - event options (capture, once and passive)
  */
-function manageEvents(els, evList, cb, method) {
+function manageEvents(els, evList, cb, method, options) {
   els = domToArray(els)
 
   split(evList).forEach((e) => {
-    for (let el of els) el[method](e, cb, false)
+    for (let el of els) el[method](e, cb, options || false)
   })
 }
 
@@ -27,10 +28,11 @@ function manageEvents(els, evList, cb, method) {
  * @param   { HTMLElement|Array } els    - DOM node/s where the listeners will be bound
  * @param   { String }            evList - list of events we want to bind space separated
  * @param   { Function }          cb     - listeners callback
+ * @param   { Object }            options - event options (capture, once and passive)
  * @returns { HTMLElement|NodeList|Array } DOM node/s and first argument of the function
  */
-export function add(els, evList, cb) {
-  manageEvents(els, evList, cb, 'addEventListener')
+export function add(els, evList, cb, options) {
+  manageEvents(els, evList, cb, 'addEventListener', options)
   return els
 }
 
@@ -39,15 +41,11 @@ export function add(els, evList, cb) {
  * @param   { HTMLElement|Array } els     - DOM node where the listeners will be bound
  * @param   { String }            evList  - list of events we want to bind space separated
  * @param   { Function }          cb      - listeners callback
+ * @param   { Object }             options - event options (capture, once and passive)
  * @returns { HTMLElement|NodeList|Array }  DOM node/s and first argument of the function
  */
-export function once(els, evList, cb) {
-  var handleEvent = function(e) {
-    cb(e)
-    remove(els, evList, handleEvent)
-  }
-
-  manageEvents(els, evList, handleEvent, 'addEventListener')
+export function once(els, evList, cb, options) {
+  manageEvents(els, evList, cb, 'addEventListener', Object.assign(options || {}, { once: true }))
   return els
 }
 
@@ -56,10 +54,11 @@ export function once(els, evList, cb) {
  * @param   { HTMLElement|Array } els     - DOM node/s where the events will be unbind
  * @param   { String }            evList  - list of events we want unbind space separated
  * @param   { Function }          cb      - listeners callback
+ * @param   { Object }             options - event options (capture, once and passive)
  * @returns { HTMLElement|NodeList|Array }  DOM node/s and first argument of the function
  */
-export function remove(els, evList, cb) {
-  manageEvents(els, evList, cb, 'removeEventListener')
+export function remove(els, evList, cb, options) {
+  manageEvents(els, evList, cb, 'removeEventListener', options)
   return els
 }
 

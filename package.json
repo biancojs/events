@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/biancojs/events#readme",
   "devDependencies": {
-    "jsdom": "9.5.0",
+    "jsdom": "9.8.0",
     "jsdom-global": "2.1.0"
   },
   "dependencies": {
