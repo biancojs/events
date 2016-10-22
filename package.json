@@ -1,6 +1,6 @@
 {
   "name": "bianco.events",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Modern DOM events helpers written in es2015",
   "main": "index.js",
   "jsnext:main": "index.next.js",
