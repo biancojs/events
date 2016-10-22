@@ -4,6 +4,7 @@ import domToArray from 'bianco.dom-to-array'
  * Split a string into several items separed by spaces
  * @param   { String } l - events list
  * @returns { Array } all the events detected
+ * @private
  */
 const split = l => l.split(/\s/)
 
@@ -14,6 +15,7 @@ const split = l => l.split(/\s/)
  * @param   { Function }                   cb      - listeners callback
  * @param   { String }                     method  - either 'addEventListener' or 'removeEventListener'
  * @param   { Object }                     options - event options (capture, once and passive)
+ * @private
  */
 function manageEvents(els, evList, cb, method, options) {
   els = domToArray(els)
