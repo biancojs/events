@@ -4,6 +4,7 @@
   "description": "Modern DOM events helpers written in es2015",
   "main": "index.js",
   "jsnext:main": "index.next.js",
+  "module": "index.next.js",
   "scripts": {
     "prepublish": "npm run build && npm test",
     "lint": "eslint index.next.js test.js rollup.config.js",
