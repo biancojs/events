@@ -34,10 +34,10 @@
   },
   "homepage": "https://github.com/biancojs/events#readme",
   "devDependencies": {
-    "jsdom": "9.8.0",
-    "jsdom-global": "2.1.0"
+    "jsdom": "9.12.0",
+    "jsdom-global": "2.1.1"
   },
   "dependencies": {
-    "bianco.dom-to-array": "^0.0.4"
+    "bianco.dom-to-array": "^0.0.8"
   }
 }
