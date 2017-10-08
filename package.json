@@ -6,7 +6,7 @@
   "jsnext:main": "index.next.js",
   "module": "index.next.js",
   "scripts": {
-    "prepublish": "npm run build && npm test",
+    "prepare": "npm run build && npm test",
     "lint": "eslint index.next.js test.js rollup.config.js",
     "build": "rollup -c",
     "doc": "documentation readme index.next.js -s API",
