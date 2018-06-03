@@ -1,8 +1,8 @@
 export default {
-  entry: 'index.next.js',
-  targets: [
+  input: 'index.next.js',
+  output: [
     {
-      dest: 'index.js',
+      file: 'index.js',
       format: 'cjs'
     }
   ]

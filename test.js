@@ -6,17 +6,17 @@ const $ = document.querySelectorAll.bind(document)
 const body = document.body
 
 function fire(el, name) {
-  var e = document.createEvent('HTMLEvents')
+  const e = document.createEvent('HTMLEvents')
   e.initEvent(name, false, true)
   el.dispatchEvent(e)
 }
 
 describe('Bianco events', function() {
 
-  let count, item, lis, inc
+  let count, item, lis, inc // eslint-disable-line
 
-  beforeEach(function () {
-    var div = document.createElement('div')
+  beforeEach(function() {
+    const div = document.createElement('div')
     div.innerHTML = `
     <ul>
       <li class='item'>click me</li>
@@ -28,7 +28,7 @@ describe('Bianco events', function() {
     count = 0
     item = $('.item')[0]
     lis = $('li')
-    inc = _ => count++
+    inc = () => count++
   })
 
   it('It can handle the "add" function properly', function() {
