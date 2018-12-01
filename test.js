@@ -1,7 +1,7 @@
 require('jsdom-global')()
 
 const assert = require('assert')
-const { add, remove, once } = require('./')
+const events = require('./')
 const $ = document.querySelectorAll.bind(document)
 const body = document.body
 
@@ -31,9 +31,17 @@ describe('Bianco events', function() {
     inc = () => count++
   })
 
+  it('export default contains all the module methods', function() {
+    assert.deepEqual(Object.keys(events.default), [
+      'add',
+      'once',
+      'remove'
+    ])
+  })
+
   it('It can handle the "add" function properly', function() {
-    add(item, 'click mouseenter', inc)
-    add(lis, 'mouseleave', inc)
+    events.add(item, 'click mouseenter', inc)
+    events.add(lis, 'mouseleave', inc)
 
     fire(item, 'click')
     fire(item, 'mouseenter')
@@ -43,10 +51,10 @@ describe('Bianco events', function() {
   })
 
   it('It can remove properly the events', function() {
-    add(item, 'click mouseenter', inc)
-    add(lis, 'mouseleave', inc)
+    events.add(item, 'click mouseenter', inc)
+    events.add(lis, 'mouseleave', inc)
 
-    remove(item, 'click', inc)
+    events.remove(item, 'click', inc)
 
     fire(item, 'click')
     fire(item, 'mouseenter')
@@ -56,8 +64,8 @@ describe('Bianco events', function() {
   })
 
   it('It can handle properly the "once" method', function() {
-    add(lis, 'mouseleave', inc)
-    once(item, 'click', function(e) {
+    events.add(lis, 'mouseleave', inc)
+    events.once(item, 'click', function(e) {
       assert.equal(typeof e, 'object')
       assert.equal(e.type, 'click')
       inc()
