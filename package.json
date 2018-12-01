@@ -35,14 +35,14 @@
   "homepage": "https://github.com/biancojs/events#readme",
   "devDependencies": {
     "@gianlucaguarini/eslint-config": "^2.0.0",
-    "eslint": "^4.19.1",
-    "jsdom": "11.11.0",
+    "eslint": "^5.8.0",
+    "jsdom": "12.2.0",
     "jsdom-global": "3.0.2",
     "mocha": "^5.2.0",
-    "rollup": "^0.59.4",
-    "rollup-plugin-node-resolve": "^3.3.0"
+    "rollup": "^0.66.6",
+    "rollup-plugin-node-resolve": "^3.4.0"
   },
   "dependencies": {
-    "bianco.dom-to-array": "^0.0.8"
+    "bianco.dom-to-array": "^0.0.10"
   }
 }
