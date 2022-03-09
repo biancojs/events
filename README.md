@@ -1,6 +1,6 @@
 # bianco.events
 
-[![Build Status][travis-image]][travis-url]
+[![Build Status][ci-image]][ci-url]
 [![NPM version][npm-version-image]][npm-url]
 [![NPM downloads][npm-downloads-image]][npm-url]
 [![MIT License][license-image]][license-url]
@@ -19,18 +19,15 @@ add(node/s, 'click mouseenter', function(e) {
 })
 ```
 
-[travis-image]: https://img.shields.io/travis/biancojs/events.svg?style=flat-square
-
-[travis-url]: https://travis-ci.org/biancojs/events
+[ci-image]:https://img.shields.io/github/workflow/status/biancojs/events/test?style=flat-square
+[ci-url]:https://github.com/biancojs/events/actions
 
 [license-image]: http://img.shields.io/badge/license-MIT-000000.svg?style=flat-square
 
 [license-url]: LICENSE.txt
-
 [npm-version-image]: http://img.shields.io/npm/v/bianco.events.svg?style=flat-square
 
 [npm-downloads-image]: http://img.shields.io/npm/dm/bianco.events.svg?style=flat-square
-
 [npm-url]: https://npmjs.org/package/bianco.events
 
 ## API
