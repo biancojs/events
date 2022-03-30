@@ -1,8 +1,8 @@
 export function add<
     Target extends EventTarget,
-    Callback extends EventListener,
+    Callback extends EventListenerOrEventListenerObject,
 >(
-  el: Target,
+  el: Target | Target[],
   eventName: string,
   callback: Callback,
   options?: AddEventListenerOptions | boolean,
@@ -10,9 +10,9 @@ export function add<
 
 export function once<
   Target extends EventTarget,
-  Callback extends EventListener,
+  Callback extends EventListenerOrEventListenerObject,
 >(
-  el: Target,
+  el: Target | Target[],
   eventName: string,
   callback: Callback,
   options?: AddEventListenerOptions | boolean,
@@ -20,9 +20,9 @@ export function once<
 
 export function remove<
   Target extends EventTarget,
-  Callback extends EventListener,
+  Callback extends EventListenerOrEventListenerObject,
 >(
-  el: Target,
+  el: Target | Target[],
   eventName: string,
   callback: Callback,
   options?: EventListenerOptions | boolean,
