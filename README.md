@@ -19,7 +19,7 @@ add(node/s, 'click mouseenter', function(e) {
 })
 ```
 
-[ci-image]:https://img.shields.io/github/workflow/status/biancojs/events/test?style=flat-square
+[ci-image]:https://img.shields.io/github/actions/workflow/status/biancojs/events/test.yml?style=flat-square
 [ci-url]:https://github.com/biancojs/events/actions
 
 [license-image]: http://img.shields.io/badge/license-MIT-000000.svg?style=flat-square
